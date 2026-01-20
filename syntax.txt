@@ -1,0 +1,3 @@
+PROGRAM -> BLOCK PROGRAM | ε
+BLOCK -> [ COMMENT ] | Identity | Number
+COMMENT -> Identity COMMENT | Number COMMENT | Special COMMENT | ε
