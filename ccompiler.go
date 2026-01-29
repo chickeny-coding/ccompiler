@@ -32,7 +32,7 @@ func main() {
 	s := arg[1]
 	info := false
 	for i := 2; i < len(arg); i++ {
-		if arg[i] == "--info" {
+		if arg[i] == "--info" || arg[i] == "-i" {
 			info = true
 		} else {
 			fmt.Printf("Unknown flag: %s\n", arg[i])
@@ -44,7 +44,7 @@ func main() {
 	}
 	tks, err := lexer(s + ".cl")
 	if err != nil {
-		fmt.Println(err)
+		fmt.Println("Error:", err)
 		return
 	}
 	if info {
@@ -55,7 +55,7 @@ func main() {
 	}
 	pst, err := parser(tks)
 	if err != nil {
-		fmt.Println(err)
+		fmt.Println("Error:", err)
 		return
 	}
 	if info {

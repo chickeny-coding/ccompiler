@@ -1,3 +1,4 @@
-PROGRAM -> BLOCK PROGRAM | ε
-BLOCK -> [ COMMENT ] | Identity | Number
+PROGRAM -> ( Identity { BLOCK } ) PROGRAM | ε
+BLOCK -> ELEMENT BLOCK | { BLOCK } BLOCK | ε
+ELEMENT -> [ COMMENT ] | Identity | Number | Identity ( )
 COMMENT -> Identity COMMENT | Number COMMENT | Special COMMENT | ε
